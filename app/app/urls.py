@@ -29,6 +29,8 @@ urlpatterns = [
     # path('api/recipe/', include('recipe.urls')),
     path('api/schema/', SpectacularAPIView.as_view(), name='api-schema'),
     path('api/docs/',
-         SpectacularSwaggerView.as_view(url_name='api-schema')
-         ),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+         SpectacularSwaggerView.as_view(url_name='api-schema'),
+         name='api-docs',
+         )
+]
+# + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
